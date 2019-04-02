@@ -15,6 +15,7 @@ namespace DynamicSitemapAndSKEditor
         {
             postRepository = new PostRepository();
         }
+
         public IReadOnlyCollection<string> GetSitemapNodes(UrlHelper urlHelper)
         {
             List<string> nodes = new List<string>();

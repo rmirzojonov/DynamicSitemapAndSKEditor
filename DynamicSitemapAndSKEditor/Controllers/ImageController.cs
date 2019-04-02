@@ -15,7 +15,7 @@ namespace DynamicSitemapAndCKEditor.Controllers
     public class ImageController : ControllerBase
     {
         [HttpPost]
-        public ActionResult UploadImage(IFormFile upload, string CKEditorFuncNum, string CKEditor, string langCode)
+        public ActionResult UploadImage(IFormFile upload)
         {
             if (upload.Length <= 0) return null;
             if (!upload.IsImage())
