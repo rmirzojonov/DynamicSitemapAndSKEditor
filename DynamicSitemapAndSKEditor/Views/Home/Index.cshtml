@@ -1,0 +1,23 @@
+﻿@{
+    ViewData["Title"] = "Home Page";
+}
+<script src="https://cdn.ckeditor.com/ckeditor5/12.0.0/classic/ckeditor.js"></script>
+<script src="~/js/ckfinder.js"></script>
+
+<div class="jumbotron">
+    <textarea id="editor1">
+
+    </textarea>
+    <script>
+        ClassicEditor
+            .create(document.querySelector('#editor1'), {
+                ckfinder: {
+                    uploadUrl: '@Url.Action("UploadImage", "Image")',
+                },
+                toolbar: ['imageUpload', '|', 'heading', '|', 'bold', 'italic', '|', 'undo', 'redo']
+            })
+            .catch(error => {
+                console.error(error);
+            });
+    </script>
+</div>
