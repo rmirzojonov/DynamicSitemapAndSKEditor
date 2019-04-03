@@ -16,7 +16,7 @@ namespace DynamicSitemapAndSKEditor
             postRepository = new PostRepository();
         }
 
-        public IReadOnlyCollection<string> GetSitemapNodes(UrlHelper urlHelper)
+        public IReadOnlyCollection<string> GetSitemapNodes(IUrlHelper urlHelper)
         {
             List<string> nodes = new List<string>();
 
@@ -51,7 +51,7 @@ namespace DynamicSitemapAndSKEditor
     }
     public static class UrlHelperExtensions
     {
-        public static string AbsoluteRouteUrl(this UrlHelper urlHelper,
+        public static string AbsoluteRouteUrl(this IUrlHelper urlHelper,
             string routeName, object routeValues = null)
         {
             string scheme = urlHelper

@@ -27,7 +27,7 @@ namespace DynamicSitemapAndSKEditor.Controllers
         public IActionResult Sitemap()
         {
             var generator = new SitemapGenerator();
-            var sitemapNodes = generator.GetSitemapNodes(new Microsoft.AspNetCore.Mvc.Routing.UrlHelper(this.Url.ActionContext));
+            var sitemapNodes = generator.GetSitemapNodes(Url);
             string xml = generator.GetSitemapDocument(sitemapNodes);
             return this.Content(xml, "text/xml", Encoding.UTF8);
         }
